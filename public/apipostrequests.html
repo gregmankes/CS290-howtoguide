@@ -15,13 +15,13 @@
 		<br>
 		<p>The BLS documentation states that when we make a post request, we must send it to the URL 
 		<code>http://api.bls.gov/publicAPI/v1/timeseries/data/</code> and then have a JSON payload of the format <code>{“seriesID”:[Series1, Series2]}</code>. This can be done in the advanced REST client as shown here.
-		<br>
+		<br><br>
 		<img src="DemoPOSTARC.png">
-		<br>
+		<br><br>
 		This is a picture of the Advanced REST client. In the URL bar we have <code>http://api.bls.gov/publicAPI/v1/timeseries/data/</code>, in the content type field we have <code>application/jsoncode</code>, and in the raw payload we have <code>{"seriesid":["LAUCN040010000000005", "LAUCN040010000000006"]}</code>. This is an example payload from the BLS documentation linked <a href="http://www.bls.gov/developers/api_signature.htm#multiple>">here</a>. When you press send you should see something like this.
-		<br>
+		<br><br>
 		<img src="rawPostJSON.png">
-		<br>
+		<br><br>
 		You can parse this or even look at it formatted with the ARC extension.
 		</p>
 		<br>
