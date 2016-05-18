@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>BLS Tutorial</title>
+	</head>
+	<body>
+		<h1>API Requests - GET and Basics</h1>
+		<h3>How to make basic API calls to the BLS API</h3>
+		<br>
+		<h3>A Very Small Overview</h3>
+		<p>There are two main ways to make API calls using Javascript. Since you are here, I assume that you know at least a little about HTTP, but if you do not you may look at <a href="http://www.w3schools.com/tags/ref_httpmethods.asp">this</a>. Basically you can make calls to the API using two methods, GET and POST. A GET request is one in which the data that you are requesting is key value encoded into a URL and sent to the server. A POST request is one in which you submit the information that you are requesting in the HTTP request itself. This is often done in HTML forms.</p>
+		<br>
+		<h3>Example</h3>
+		<p>Enter <a href="http://api.bls.gov/publicAPI/v1/timeseries/data/LAUCN040010000000005">http://api.bls.gov/publicAPI/v1/timeseries/data/LAUCN040010000000005</a> into your browser URL bar. If you do this, you will receive a JSON encoded string such as the one below.</p>
+		<br>
+		<img src="DemoJSONResponse.png">
+		<br>
+		<p>What we have done is make a GET request in its simplest form and received a JSON encoded string. JSON stands for Javascript Object Notation. It is used as a way to pass information from one source to another. This may look intimidating, but you really don’t need to look in detail at this point. It’s just the data that was spat back at us from the server. You will be able to handle this data later when you want to use it for your application. The important part of all of this is that we can get the information. For more reference on JSON, check <a href="http://www.w3schools.com/json/">this</a> out.</p>
+		<br>
+		<h3>Ready to move on?</h3>
+		<p>Great!</p>
+		<a href="./getapikey.html">previous</a>
+		<a href="./apipostrequests.html">next</a>
+	</body>
+</html>
