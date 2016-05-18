@@ -3,40 +3,48 @@
 	<head>
 		<meta charset="utf-8">
 		<title>BLS Tutorial</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	</head>
 	<body>
-		<h1>Side Notes</h1>
-		<h3>Some extra stuff that you will need to use the API</h3>
-		<br>
-		<h3>API Key</h3>
-		<p>
-			One of the things that you may have wondered was why you needed to register for the API key in the first place. Well as I mentioned before, the BLS API has a limit on how many requests you can send anonymously per day. In fact, it is pretty limited as you can only do 25 requests per day without registration. 
-			<br><br>
-			In order to get around this, you need only do two things:
-			<ul>
-				<li>GET
-					<ul>
-						<li>You need to change the api version of the url and include a key=value combination for the api key
-						</li>
-						<li>
-							This can be done with the following: <code>http://api.bls.gov/publicAPI/v2/timeseries/data/LAUCN040010000000005?registrationKey=xxxxxxxxxxxxyourAPIKeyxxxxxxxxx</code>
-						</li>
-					</ul>
-				</li>
-				<li>POST
-					<ul>
-						<li>You need to add the registration key to the body of the JSON Payload</li>
-						<li>This can be done with the following: <code>"body":
-        					'{"seriesid":["APU0000701322"], "registrationKey":"xxxxxxxxxxxxyourAPIKeyxxxxxxxxx"}'</code>
-        				</li>
-					</ul>
-				</li>
-			</ul>
-			<br>
-			You now have a working knowledge of API's and how to use them. You also should know how to access the BLS data using version 1 and 2 of their API. You can also parse that data and use it for your own applications.
-		</p>
-		<br>
-		<h3>Have a Good Day!</h3>
-		<a href="parsingjson.html">previous</a>
+		<div class="container">
+  			<div class="row">
+    			<div class="col-9 col-offset-2">
+					<h1>Side Notes</h1>
+					<h3>Some extra stuff that you will need to use the API</h3>
+					<br>
+					<h3>API Key</h3>
+					<p>
+						One of the things that you may have wondered was why you needed to register for the API key in the first place. Well as I mentioned before, the BLS API has a limit on how many requests you can send anonymously per day. In fact, it is pretty limited as you can only do 25 requests per day without registration. 
+						<br><br>
+						In order to get around this, you need only do two things:
+						<ul>
+							<li>GET
+								<ul>
+									<li>You need to change the api version of the url and include a key=value combination for the api key
+									</li>
+									<li>
+										This can be done with the following: <code>http://api.bls.gov/publicAPI/v2/timeseries/data/LAUCN040010000000005?registrationKey=xxxxxxxxxxxxyourAPIKeyxxxxxxxxx</code>
+									</li>
+								</ul>
+							</li>
+							<li>POST
+								<ul>
+									<li>You need to add the registration key to the body of the JSON Payload</li>
+									<li>This can be done with the following: <code>"body":
+			        					'{"seriesid":["APU0000701322"], "registrationKey":"xxxxxxxxxxxxyourAPIKeyxxxxxxxxx"}'</code>
+			        				</li>
+								</ul>
+							</li>
+						</ul>
+						<br>
+						You now have a working knowledge of API's and how to use them. You also should know how to access the BLS data using version 1 and 2 of their API. You can also parse that data and use it for your own applications.
+					</p>
+					<br>
+					<h3>Have a Good Day!</h3>
+					<a href="parsingjson.html">previous</a>
+					<br><br>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

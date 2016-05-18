@@ -3,46 +3,55 @@
 	<head>
 		<meta charset="utf-8">
 		<title>BLS Tutorial</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	</head>
 	<body>
-		<h1>Handling Data</h1>
-		<h3>Getting JSON objects from our responses</h3>
-		<br>
-		<h3>Using the information in your application</h3>
-		<p>
-			We had previously looked a little at JSON, but didn’t talk much about how to use it. When we receive a response from our API call, we get it in JSON string format. That is, the response is actually a string of text. We want to be able to handle the data programmatically, so we will need to parse the strings into JSON objects. This is done with the <code>JSON.parse</code> method. We can parse a JSON string and return a JSON object with this.
-			<br><br>
-				<iframe width="100%" height="300" src="//jsfiddle.net/mankesg/fd8pzwwy/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-			<br><br>
-			Here we create a JSON object, turn it into a string, and then parse it back again. We can use this in our <code>app.get</code> method take the response we get from the BLS API and handle it in our programs.
-			<br><br>
-			Lets use this to get the average price of spaghetti for a January 2015. To do this, we will need to look up the series id of the prices of spaghetti. Below shows how we format the series id to get the prices of specific foods. We will use an ID starting with APU0000. The APU is used as the prefix for food and seasonal adjustment. The 0000 stands for US average.
-			<br><br>
-				<img src="priceseriesidformat.png">
-			<br><br>
-			To complete the series ID, we need to give it an item code. Below we see the item code for spaghetti.
-			<br><br>
-				<img src="spaghettiseriesid.png">
-			<br><br>
-			Now let's make a simple POST request to get the price of spaghetti in January 2015. We will be using the series ID <code>APU0000701322</code>. 
-			<br><br>
-				<iframe width="100%" height="300" src="//jsfiddle.net/mankesg/4jwb1e04/2/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-			<br><br>
-			Now there's a lot of new stuff here so I'll explain it in detail:
-			<ul>
-				<li>We first parse the body of the response to get a JSON object</li>
-				<li>We then set up a string for our output to express</li>
-				<li>We are going to loop over every element in the JSON response object. So we get the response's results' first series property and loop over the data. From there we can access the spaghetti prices per year and month</li>
-				<li>If the current year is 2015 and the month is January, we concatenate the output string with the price of the spaghetti</li>
-				<li>Finally we set this output to the context object's bls field and send it to handlebars</li>
-			</ul>
-			In this case, the response was shown below:
-			<br><br>
-				<img src="spaghettijanuary2015.png">
-			<br><br>
-		</p>
-		<h3>Finished?</h3>
-		<a href="./serversideblspost.html">previous</a>
-		<a href="./goodbye.html">next</a>
+		<div class="container">
+  			<div class="row">
+    			<div class="col-9 col-offset-2">
+					<h1>Handling Data</h1>
+					<h3>Getting JSON objects from our responses</h3>
+					<br>
+					<h3>Using the information in your application</h3>
+					<p>
+						We had previously looked a little at JSON, but didn’t talk much about how to use it. When we receive a response from our API call, we get it in JSON string format. That is, the response is actually a string of text. We want to be able to handle the data programmatically, so we will need to parse the strings into JSON objects. This is done with the <code>JSON.parse</code> method. We can parse a JSON string and return a JSON object with this.
+						<br><br>
+							<iframe width="100%" height="300" src="//jsfiddle.net/mankesg/fd8pzwwy/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+						<br><br>
+						Here we create a JSON object, turn it into a string, and then parse it back again. We can use this in our <code>app.get</code> method take the response we get from the BLS API and handle it in our programs.
+						<br><br>
+						Lets use this to get the average price of spaghetti for a January 2015. To do this, we will need to look up the series id of the prices of spaghetti. Below shows how we format the series id to get the prices of specific foods. We will use an ID starting with APU0000. The APU is used as the prefix for food and seasonal adjustment. The 0000 stands for US average.
+						<br><br>
+							<img src="priceseriesidformat.png">
+						<br><br>
+						To complete the series ID, we need to give it an item code. Below we see the item code for spaghetti.
+						<br><br>
+							<img src="spaghettiseriesid.png">
+						<br><br>
+						Now let's make a simple POST request to get the price of spaghetti in January 2015. We will be using the series ID <code>APU0000701322</code>. 
+						<br><br>
+							<iframe width="100%" height="300" src="//jsfiddle.net/mankesg/4jwb1e04/2/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+						<br><br>
+						Now there's a lot of new stuff here so I'll explain it in detail:
+						<ul>
+							<li>We first parse the body of the response to get a JSON object</li>
+							<li>We then set up a string for our output to express</li>
+							<li>We are going to loop over every element in the JSON response object. So we get the response's results' first series property and loop over the data. From there we can access the spaghetti prices per year and month</li>
+							<li>If the current year is 2015 and the month is January, we concatenate the output string with the price of the spaghetti</li>
+							<li>Finally we set this output to the context object's bls field and send it to handlebars</li>
+						</ul>
+						In this case, the response was shown below:
+						<br><br>
+							<img src="spaghettijanuary2015.png">
+						<br><br>
+					</p>
+					<h3>Finished?</h3>
+					<a href="./serversideblspost.html">previous</a>
+					<br><br>
+					<a href="./goodbye.html">next</a>
+					<br><br>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

@@ -3,31 +3,40 @@
 	<head>
 		<meta charset="utf-8">
 		<title>BLS Tutorial</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	</head>
 	<body>
-		<h1>API Requests - POST</h1>
-		<h3>Lets try to get more data from the BLS at once</h3>
-		<br>
-		<h3>How do we post?</h3>
-		<p>We will now make a post request to the BLS API. POST requests are often used to submit multiple pieces of data to a server so that we can obtain more data to access. The case of the BLS API, we would want to make requests to obtain labor statists for multiple series at the same time to be displayed.</p>
-		<br>
-		<p>To do this in its simplest form, we will want to use a chrome extension called Advanced REST Client linked <a href="https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?hl=en-US">here</a>. This client is used to test and make post requests so that we can test that we are making functional calls. Download and install the Advanced REST Client.</p>
-		<br>
-		<p>The BLS documentation states that when we make a post request, we must send it to the URL 
-		<code>http://api.bls.gov/publicAPI/v1/timeseries/data/</code> and then have a JSON payload of the format <code>{“seriesID”:[Series1, Series2]}</code>. This can be done in the advanced REST client as shown here.
-		<br><br>
-		<img src="DemoPOSTARC.png">
-		<br><br>
-		This is a picture of the Advanced REST client. In the URL bar we have <code>http://api.bls.gov/publicAPI/v1/timeseries/data/</code>, in the content type field we have <code>application/jsoncode</code>, and in the raw payload we have <code>{"seriesid":["LAUCN040010000000005", "LAUCN040010000000006"]}</code>. This is an example payload from the BLS documentation linked <a href="http://www.bls.gov/developers/api_signature.htm#multiple>">here</a>. When you press send you should see something like this.
-		<br><br>
-		<img src="rawPostJSON.png">
-		<br><br>
-		You can parse this or even look at it formatted with the ARC extension.
-		</p>
-		<br>
-		<h3>Finished?</h3>
-		<p>Let's move on to learn how to work with the API</p>
-		<a href="./apigetrequests.html">previous</a>
-		<a href="./apirequestswithbls.html">next</a>
+		<div class="container">
+  			<div class="row">
+    			<div class="col-9 col-offset-2">
+					<h1>API Requests - POST</h1>
+					<h3>Lets try to get more data from the BLS at once</h3>
+					<br>
+					<h3>How do we post?</h3>
+					<p>We will now make a post request to the BLS API. POST requests are often used to submit multiple pieces of data to a server so that we can obtain more data to access. The case of the BLS API, we would want to make requests to obtain labor statists for multiple series at the same time to be displayed.</p>
+					<br>
+					<p>To do this in its simplest form, we will want to use a chrome extension called Advanced REST Client linked <a href="https://chrome.google.com/webstore/detail/advanced-rest-client/hgmloofddffdnphfgcellkdfbfbjeloo?hl=en-US">here</a>. This client is used to test and make post requests so that we can test that we are making functional calls. Download and install the Advanced REST Client.</p>
+					<br>
+					<p>The BLS documentation states that when we make a post request, we must send it to the URL 
+					<code>http://api.bls.gov/publicAPI/v1/timeseries/data/</code> and then have a JSON payload of the format <code>{“seriesID”:[Series1, Series2]}</code>. This can be done in the advanced REST client as shown here.
+					<br><br>
+					<img src="DemoPOSTARC.png">
+					<br><br>
+					This is a picture of the Advanced REST client. In the URL bar we have <code>http://api.bls.gov/publicAPI/v1/timeseries/data/</code>, in the content type field we have <code>application/jsoncode</code>, and in the raw payload we have <code>{"seriesid":["LAUCN040010000000005", "LAUCN040010000000006"]}</code>. This is an example payload from the BLS documentation linked <a href="http://www.bls.gov/developers/api_signature.htm#multiple>">here</a>. When you press send you should see something like this.
+					<br><br>
+					<img src="rawPostJSON.png">
+					<br><br>
+					You can parse this or even look at it formatted with the ARC extension.
+					</p>
+					<br>
+					<h3>Finished?</h3>
+					<p>Let's move on to learn how to work with the API</p>
+					<a href="./apigetrequests.html">previous</a>
+					<br><br>
+					<a href="./apirequestswithbls.html">next</a>
+					<br><br>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
