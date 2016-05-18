@@ -5,6 +5,32 @@
 		<title>BLS Tutorial</title>
 	</head>
 	<body>
-		Hello World lol
+		<h1>API Requests - How to make one</h1>
+		<h3>How do we actually go about making an API request in programs?</h3>
+		<br>
+		<h3>BLS Requests</h3>
+		<p>
+			In order to make requests to specific information using the BLS API, you must have access to either a year or a series id that you wish to query. The series id formatting can be found <a href="http://www.bls.gov/help/hlpforma.htm">here</a>. This page will show you how to construct a series id when sending a request.
+		</p>
+		<br>
+		<h3>How do we program a request?</h3>
+		<p>
+			Previously, I had shown you two ways to obtain the information, but neither of those approaches were done programmatically. I did this so that you can see how easy it is to obtain the information that you need without having to meddle with programming. Now we will turn to making API calls in Javascript.
+		</p>
+		<br>
+		<h3>A Simple GET Request</h3>
+		<p>
+			<iframe width="100%" height="200" src="//jsfiddle.net/mankesg/ebadf9pd/embedded/js/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+			<br>
+			This is the simplest form of making a GET request in Javascript. We first instantiate a new XMLHttpRequest, we then open that request with the type of request, “GET”, the key-value encoded URL, and then a parameter to tell whether the request is asynchronous. For this example, it will not be.
+			<br>
+			I’ll start by explaining all of the above jargon. Most GET requests are URL key-value encoded, meaning that the server that the URL represents is sent a query string that consists of ampersand separated keys and values. These are used by the server to send back the data you request. For the BLS API, you just send them a series id. This is why there are no question marks (indicates that there is a query string), ampersands (used to separate keys and values) and equals signs (used to separate keys and values).
+			<br>
+			Synchronous requests are requests that wait until the server responds to move along. Asynchronous requests move along before the server responds. We define a callback function on the request before sending it so that when the server responds, we will do something with the response.
+			<br>
+			On the next page, we will make an asynchronous request to the BLS API and then display its output. Unfortunately, the BLS API does not allow you to make a Javascript front end API request. This is because most browsers adhere to a protocol called <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">CORS</a>. Some websites will allow you to make a client side HTTP request, BLS does not. Instead we will be making the call with server side programming.
+		</p>
+		<a href="./apipostrequests.html">previous</a>
+		<a href="./serversidebls.html">next</a>
 	</body>
 </html>
