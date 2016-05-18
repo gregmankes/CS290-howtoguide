@@ -5,6 +5,30 @@
 		<title>BLS Tutorial</title>
 	</head>
 	<body>
-		Hello World lol
+		<h1>Server Side GET Reqeusts to BLS</h1>
+		<h3>Now we're talking.</h3>
+		<br>
+		<h3>Get Basic Information</h3>
+		<p>
+			Here we will be making basic server side API calls to the BLS API. We will be using node.js, express, and express-handlebars. If you are not familiar with <a href="https://nodejs.org/en/">node</a>, <a href="http://expressjs.com/">express</a>, or <a href="https://github.com/ericf/express-handlebars">express-handlebars</a>, they are referenced here. You will need to install node.js and use the built in node package manager (npm) to install express.js, express-handlebars, express-session and body-parser(used for parsing JSON). You can do this by invoking the command <code>npm install (packageNameHere) --save</code> in the directory in which you want to start your project. To make this easier, you should copy the following into a file called <code>package.json</code> and then invoke the command <code>npm install --save</code> in that directory. This will automatically install all of the dependencies that you need to make basic GET and POST requests with node and express.
+			<br><br>
+				<iframe width="100%" height="300" src="//jsfiddle.net/mankesg/66to8t4f/1/embedded/js/" allowfullscreen="allowfullscreen" frameborder="10"></iframe>
+			<br><br>
+			You will then need to copy the code below and save it into that directory. You may give it any name that you like, so long as it has a <code>.js</code> extension.
+			<br><br>
+				<iframe width="100%" height="300" src="//jsfiddle.net/mankesg/gc9cn0hc/embedded/js/" allowfullscreen="allowfullscreen" frameborder="10"></iframe>
+			<br><br>
+			The final thing you will need to do is create a <code>.handlebars</code> file named ‘ht’ of the following format. You will need to look at the express documentation for where this goes. You should have a views folder that will contain the ht.handlebars as well as another folder inside views called layouts. There you will have a main.handlebars file which is a template for all files that are to be rendered.
+			<br><br>
+				<iframe width="100%" height="150" src="//jsfiddle.net/mankesg/sL5rjwp5/1/embedded/html/" allowfullscreen="allowfullscreen" frameborder="10"></iframe>
+			<br><br>
+			You will then run the application using <code>node (copiedFileNameFromBefore)</code>. If you go to <code>localhost:3000</code> you will see the following.
+			<br>
+				<img src="ServerSideBLSGETJSON.png">
+			<br>
+			Now a lot is going on here. Basically, all you need to know is that we are making a get request on line 19 the same we we had shown before. When that request returns, we call an anonymous function that takes the response body that is returned and then we add it to a context object that is sent off to be rendered. The context object now has the field bls. The content of <code>context.bls</code> is what gets rendered in <code>ht.handlebars</code>.
+		</p>
+		<a href="./apirequestswithbls.html">previous</a>
+		<a href="./serversideblspost.html">next</a>
 	</body>
 </html>
